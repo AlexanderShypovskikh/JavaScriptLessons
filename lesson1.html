@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<script>
+	 function printNumberSequence(start, end){
+	 	document.getElementById("results").innerHTML = "";
+       for(i = start; i <= end; i++){
+       	 document.getElementById("results").innerHTML += "<br>"+i;
+       }
+
+ 	 }
+
+</script>	
+</head>
+<body>
+	<h3>Lesson 1 - Print all numbers from n to m each in a new line </h3>
+
+  <input type="button" name="start from 3" onclick="printNumberSequence(3,20)" 
+   value="start from 3 to 20"/>
+  <input type="button" name="start from 7" onclick="printNumberSequence(7,20)" 
+  value="start from 7 to 20"/>
+
+  <div>Results are:</div>
+  <div id="results"></div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+<script>
+	 function printNumberSequence(){
+	       var text = "";
+         var starsCount = Math.random()*10;
+ 
+        for(var i = 0; i < starsCount; i++){
+             text +="*";
+            }
+            document.getElementById("results").innerHTML += text;
+            document.getElementById("results").innerHTML += "<br>";
+       
+       	 }
+
+</script>	
+</head>
+<body>
+	<h3>Lesson 4 - Print  stars</h3>
+   <div>
+        <!-- <input type="numbers"  value="4" id="startValue"/> -->
+
+   </div>
+  <div><input type="button" name="start" onclick="printNumberSequence()" value="start"/>
+   </div>  
+  <div>Results are:</div>
+  <div id="results"></div>
+</body>
+
+</html>

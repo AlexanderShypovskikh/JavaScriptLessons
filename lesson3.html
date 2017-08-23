@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<script>
+	 function printNumberSequence(){
+	 	//var startNum = parseInt(document.getElementById("startValue").value);
+	 	//var endNum = parseInt(document.getElementById("endValue").value);
+	       document.getElementById("results").innerHTML = "";
+	       var text = "";
+ 
+        for(var i = -5; i <=5; i++){
+             if(i!=0)
+             text +="<br>"+i;
+            }
+            document.getElementById("results").innerHTML += text;
+        
+ 	 }
+
+</script>	
+</head>
+<body>
+	<h3>Lesson 3 - Print all numbers from -5 to 5 except zero </h3>
+   <div>
+        <!-- <input type="numbers"  value="4" id="startValue"/> -->
+
+   </div>
+  <div><input type="button" name="start" onclick="printNumberSequence()" value="start"/>
+   </div>  
+  <div>Results are:</div>
+  <div id="results"></div>
+</body>
+
+</html>

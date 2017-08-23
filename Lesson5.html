@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+<script>
+    var arr = new Array();
+    var countPlay = 0;
+    var tryes = 0; 
+	 function printNumberSequence(){
+          countPlay++;
+	        var text = "";
+
+          var number = parseInt(document.getElementById("startValue").value);
+          var flag = false;  
+          
+         if(tryes < 2){
+         for(i = 0; i < 4; i++){
+              if(arr[i] == number){
+                flag = true;
+               document.getElementById("results").innerHTML += "You've guessed!"; 
+               break;   
+              }
+            }
+              if(flag == false){
+                 document.getElementById("results").innerHTML += "You've missed!"
+                 document.getElementById("results").innerHTML += "<br>"+arr.toString();
+                
+                 } 
+
+                document.getElementById("results").innerHTML += "You have played "+countPlay+" times"; 
+                document.getElementById("results").innerHTML += "<br>";
+                tryes++;
+             } else {
+                document.getElementById("startButton").disabled=true;
+                tryes = 0;
+             } 
+
+
+       
+       	 }
+
+
+         function createArray(){
+               var number = 0;
+               var count = 0;
+               var flag = false;
+               document.getElementById("startButton").disabled=false;
+
+                 while(count < 4){ 
+                  number = Math.floor(Math.random()*9);
+                    
+                  for(j = 0; j < count; j++)
+                     if(arr[j] == number){
+                        flag = true;
+                     }
+                     if(flag == true){
+                        flag = false;
+                     } else {
+                       arr[count] = number;
+                       count++;
+                     }
+
+
+                }
+
+           }
+
+</script>	
+</head>
+<body>
+	<h3>Lesson 5 - Print  stars</h3>
+   <div>
+         <input type="text"  id="startValue"/>
+           
+   </div>
+  <div>
+     <input type="button" name="createArr" onclick="createArray()" value="Create Array"/>
+     <input type="button" name="start" onclick="printNumberSequence()" value="Check!" id="startButton"/>
+   </div>  
+  <div>Results are:</div>
+  <div id="results"></div>
+</body>
+
+</html>

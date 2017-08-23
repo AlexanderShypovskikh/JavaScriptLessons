@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+<script>
+
+function initTablePoperties(){
+     document.getElementById("message").innerHTML = "init table";
+     var tr = document.getElementsByTagName('tr');
+     document.getElementById("message").innerHTML = ""+(tr.length);
+
+   for(var i = 0; i <= tr.lenght; i++ )
+       tr[i].onclick = doSomething(){
+        document.getElementById('message').innerHTML = "works";
+       }
+}
+
+
+ function onmouseOverListener(){
+     document.getElementById("message").innerHTML = "WORKS";
+   
+ }
+    
+   function createTable(){
+    document.getElementById("tableArea").innerHtml = "";
+    var tableArea = document.getElementById('tableArea');
+    var mTable = document.createElement('table');
+    // debugger;
+       for(var i = 1; i <= 10; i++){
+          var tr;
+          if(i == 1){
+            tr = document.createElement('tr');
+               tr.style.background = 'GREY';
+           }
+            else
+               tr = document.createElement('tr');
+            
+            tr.style.border ="thick solid #0000FF";
+            
+           for(j = 1; j <= 10; j++){
+            var td = document.createElement('td');
+             if(j==1)
+                td.style.background = "GREY"
+
+              tr.appendChild(td); 
+              tr.addEventListener("onmouseover", onmouseOverListener);
+              var text = document.createTextNode(j*100);
+              td.appendChild(text);
+          }
+          
+           mTable.appendChild(tr);
+           tableArea.appendChild(mTable);
+
+         }
+        initTablePoperties();
+         
+
+   }
+</script>	
+</head>
+<body>
+	<h3>Lesson 6 - Create table 10*10</h3>
+   <div>
+       <input type="button" value ="create Table" onclick="createTable()"/>
+    </div>
+   <div id="tableArea"></div>
+   <p>Message: <apan id="message"> </apan></p>
+</body>
+
+</html>
